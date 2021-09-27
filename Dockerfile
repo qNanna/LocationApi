@@ -2,12 +2,10 @@ FROM node
 
 WORKDIR /app
 
-COPY package.json /app
-
-RUN npm ci
-
 COPY . .
+
+RUN npm install
 
 EXPOSE 3052
 
-CMD ["node", "run", "start"]
+CMD ["npm", "start"]
